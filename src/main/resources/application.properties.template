@@ -7,9 +7,9 @@ server.port=8081
 # Couchbase parameters #
 #======================#
 #Couchbase credentials (localhost)
-couchbase.host_name=${C360HOST}
-couchbase.bucket_name=${C360BUCKET}
-couchbase.password=${C360PASS}
+couchbase.host_name=###C360_POD###
+couchbase.bucket_name=###C360_BUCKET###
+couchbase.password=###C360_PASS###
 
 spring.data.couchbase.auto-index=true
 
@@ -17,15 +17,15 @@ spring.data.couchbase.auto-index=true
 # DATA SOURCE
 # ===============================
 ## Product
-product.datasource.url = jdbc:mysql://${C360MYSQLHOST}:3306/${MYSQL_DATABASE}?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false
-product.datasource.username = ${MYSQL_USER}
-product.datasource.password = ${MYSQL_PASSWORD}
+product.datasource.url = jdbc:mysql://###C360_MYSQL_HOST###:3306/###MYSQL_DATABASE###?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false
+product.datasource.username = ###MYSQL_USER###
+product.datasource.password = ###MYSQL_PASSWORD###
 product.datasource.driver-class-name=com.mysql.jdbc.Driver
 
 ## User
-user.datasource.url=jdbc:postgresql://${C360POSTGREHOST}:5432/${POSTGRESQL_DATABASE}
-user.datasource.username=${POSTGRESQL_USER}
-user.datasource.password=${POSTGRESQL_PASSWORD}
+user.datasource.url=jdbc:postgresql://###C360_POSTGRES_HOST###:5432/###POSTGRESQL_DATABASE###
+user.datasource.username=###POSTGRESQL_USER###
+user.datasource.password=###POSTGRESQL_PASSWORD###
 user.datasource.driver-class-name=org.postgresql.Driver
 
 spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
